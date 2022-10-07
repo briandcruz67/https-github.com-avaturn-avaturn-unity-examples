@@ -2,6 +2,7 @@
 
 public static class Bridge
 {
+#if UNITY_WEBGL
     [DllImport("__Internal")]
     private static extern void SetupVto();
     
@@ -10,7 +11,8 @@ public static class Bridge
     
     [DllImport("__Internal")]
     private static extern void HideVtoFrame();
-
+#endif
+    
     public static void SetIFrameVisibility(bool isVisible)
     {
 #if !UNITY_EDITOR && UNITY_WEBGL

@@ -1,5 +1,5 @@
 function setupVtoFrame(subdomain) {
-    const glb_url = encodeURIComponent('local/dec1_all_emb.glb');
+    const glb_url = encodeURIComponent('local/dec1_all_emb.glb'); // TODO Get from main page
     console.log(glb_url);
     vtoFrame.src = "https://vto.in3d.io/?avatar_link=" + glb_url + "&5model_with_hair=1";
     window.addEventListener("message", subscribe);
@@ -35,7 +35,7 @@ function setupVtoFrame(subdomain) {
             return null;
         }
     }
-
+    
     function dataURItoBlob(dataURI) {
         var mime = dataURI.split(',')[0].split(':')[1].split(';')[0];
         var binary = atob(dataURI.split(',')[1]);
