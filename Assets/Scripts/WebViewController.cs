@@ -20,4 +20,10 @@ public class WebViewController : MonoBehaviour
             }
         });
     }
+
+    public void ShowView(bool show)
+    {
+        if (show) webView.Show();
+        else webView.Hide();
+    }
 }

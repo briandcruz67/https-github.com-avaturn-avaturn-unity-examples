@@ -5,13 +5,13 @@ using UnityEngine.Events;
 
 public class AvatarReceiver : MonoBehaviour
 {
-    [Serializable] class OnUrlReceived : UnityEvent<string> {}
+    [Serializable] class OnReceived : UnityEvent<string> {}
 
     [SerializeField] private string parameterKey;
 #if UNITY_IOS || UNITY_ANDROID
     [SerializeField] private UniWebView webView;
 #endif
-    [SerializeField] private OnUrlReceived received;
+    [SerializeField] private OnReceived received;
     
     // Start is called before the first frame update
     void Start()
@@ -20,19 +20,6 @@ public class AvatarReceiver : MonoBehaviour
         Bridge.SetupVtoFrame();
 #elif UNITY_IOS || UNITY_ANDROID
         webView.OnMessageReceived += GetFromWebView;
-        webView.SetSupportMultipleWindows(true, false);
-        webView.OnFileDownloadStarted += (view, remoteUrl, fileName) => {
-            Debug.Log(string.Format("Download Started. From '{0}', file name '{1}'", remoteUrl, fileName));
-        };
-
-        webView.OnFileDownloadFinished += (view, errorCode, remoteUrl, diskPath) => {
-            if (errorCode == 0) { // Success
-                Debug.Log(string.Format("Download Finished. From '{0}', to '{1}'", remoteUrl, diskPath));
-                received?.Invoke(diskPath);
-            } else {
-                Debug.LogError("Download error: " + errorCode);
-            }
-        };
 #endif
     }
 
