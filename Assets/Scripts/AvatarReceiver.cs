@@ -11,8 +11,9 @@ public class AvatarReceiver : MonoBehaviour
 #if UNITY_IOS || UNITY_ANDROID
     [SerializeField] private UniWebView webView;
 #endif
+    [SerializeField] private UnityEvent startReceiving;
     [SerializeField] private OnReceived received;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +38,7 @@ public class AvatarReceiver : MonoBehaviour
         {
             case "begin":
                 GlbBytes.Clear();
+                startReceiving.Invoke();
                 return;
             case "end":
                 received?.Invoke("bytes");
