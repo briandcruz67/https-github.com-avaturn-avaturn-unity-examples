@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>{{{ PRODUCT_NAME }}}</title>
+    <meta name="description" content="Example of WebGL, Unity, in3D">
+    <link rel="stylesheet" href="data/style.css">
+</head>
+
+<body>
+    <div id="canvas-wrap">
+        <div id="vto-container">
+            <iframe id="vto-frame" class="vto-frame" allow="camera *; microphone *"></iframe>
+            <button id="vto-hide-button" onclick="hideVto()">Hide</button>
+        </div>
+        <div id="unity-container">
+            <canvas id="unity-canvas" ></canvas>
+        </div>
+    </div>
+    <div id="loader2">
+        <div class="loader-wrap">
+            <div class="block1"></div>
+            <div class="block2"></div>
+            <div class="text">
+                <div class="text__in3d"><img src="img/in3d.png" alt=""></div>
+                <div class="text__vendor"><img src="img/in3d.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="data/Global.js"></script>
+<script src="data/VtoFrame.js"></script>
+<script src="Build/{{{ LOADER_FILENAME }}}"></script>
+<script>
+    function unityShowBanner(msg, type) {
+        
+    }
+    
+    var buildUrl = "Build";
+    var loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
+    var config = {
+        dataUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
+        frameworkUrl: buildUrl + "/{{{ FRAMEWORK_FILENAME }}}",
+        codeUrl: buildUrl + "/{{{ CODE_FILENAME }}}",
+        #if MEMORY_FILENAME
+        memoryUrl: buildUrl + "/{{{ MEMORY_FILENAME }}}",
+        #endif
+        #if SYMBOLS_FILENAME
+        symbolsUrl: buildUrl + "/{{{ SYMBOLS_FILENAME }}}",
+        #endif
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "{{{ COMPANY_NAME }}}",
+        productName: "{{{ PRODUCT_NAME }}}",
+        productVersion: "{{{ PRODUCT_VERSION }}}",
+        showBanner: unityShowBanner,
+    };
+
+    createUnityInstance(canvas, config, (progress) => {
+        //progressBarFull.style.width = 100 * progress + "%";
+    })
+        .then((unityInstance) => {
+            gameInstance = unityInstance;
+            document.querySelector(".block2").style.animation = "block2-a 0.8s linear forwards";
+            document.querySelector(".text__in3d").style.animation = "text__in3d-a2 0.4s linear forwards";
+            document.querySelector(".text__vendor").style.animation = "text__vendor-a2 0.4s linear forwards";
+            setTimeout(function() {
+                document.querySelector("#loader2").style.display = "none";
+            }, 2000);
+        })
+        .catch((message) => {
+            alert(message);
+        });
+</script>
+
+</html>
