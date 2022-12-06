@@ -4,7 +4,8 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
-
+Logs/ 
+webgl_build/
 # Visual Studio cache directory
 .vs/
 

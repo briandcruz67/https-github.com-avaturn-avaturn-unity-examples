@@ -1,7 +1,5 @@
 function setupVtoFrame(subdomain) {
-    const glb_url = encodeURIComponent('local/dec1_all_emb.glb'); // TODO Get from main page
-    console.log(glb_url);
-    vtoFrame.src = "https://vto.in3d.io/?avatar_link=" + glb_url + "&5model_with_hair=1";
+    vtoFrame.src = "https://avaturn.me/iframe";
     window.addEventListener("message", subscribe);
     document.addEventListener("message", subscribe);
 
@@ -10,14 +8,14 @@ function setupVtoFrame(subdomain) {
         const json = parse(event);
 
         if (gameInstance == null ||
-            json?.source !== "in3D" ||
+            json?.source !== "avaturn" ||
             json?.eventName == null) {
             return;
         }
 
         // Get avatar GLB URL
-        if (json.eventName === 'avatar.exported') {
-            let url = window.URL.createObjectURL(dataURItoBlob(json.blobURI));
+        if (json.eventName === 'v1.avatar.exported') {
+            let url = window.URL.createObjectURL(dataURItoBlob(json.data.blobURI));
             console.log(`Avatar URL: ${url}`);
             gameInstance.SendMessage(
                 "AvatarReceiver",
@@ -50,9 +48,11 @@ function setupVtoFrame(subdomain) {
 }
 
 function displayVto() {
+    console.log("Display");
     vtoContainer.style.display = "block";
 }
 
 function hideVto() {
+    console.log("Hide");
     vtoContainer.style.display = "none";
 }

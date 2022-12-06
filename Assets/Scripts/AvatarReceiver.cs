@@ -18,7 +18,7 @@ public class AvatarReceiver : MonoBehaviour
     void Start()
     {
 #if UNITY_WEBGL
-        Bridge.SetupVtoFrame();
+        // Bridge.SetupVtoFrame();
 #elif UNITY_IOS || UNITY_ANDROID
         webView.OnMessageReceived += GetFromWebView;
 #endif
