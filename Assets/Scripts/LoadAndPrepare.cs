@@ -58,6 +58,11 @@ public class LoadAndPrepare : MonoBehaviour
         return req;
     }
 
+    public void PrepareModelTest()
+    {
+        PrepareModel(transform);
+    }
+
     private bool PrepareModel(Transform model)
     {
         if (model.transform.childCount != 1)
@@ -115,6 +120,8 @@ public class LoadAndPrepare : MonoBehaviour
                     return true;
                 case "mixamorigHips":
                     return false;
+                case "Hips":
+                    return true;
             }
         }
         hips = null;
