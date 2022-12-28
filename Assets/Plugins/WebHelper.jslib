@@ -1,14 +1,20 @@
 mergeInto(LibraryManager.library, {
 
-    ShowVtoFrame: function () {
-        displayVto();
+    ShowAvaturnIframeJS: function () {
+        displayIframe();
     },
-  
-    HideVtoFrame: function () {
-        hideVto();
+
+    Aewrwer: function () {
+
+    },
+
+    HideAvaturnIFrameJS: function () {
+        hideIframe();
     },
         
-    SetupVto: function (partner){
-        setupVtoFrame(UTF8ToString(partner));
+    SetupAvaturnIframeJS: function (subdomain){
+        //subdomain = 'demo';
+        setupIframe(UTF8ToString(subdomain));
+        // setupIframe(subdomain);
     },
 });

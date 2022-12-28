@@ -5,28 +5,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>{{{ PRODUCT_NAME }}}</title>
-    <meta name="description" content="Example of WebGL, Unity, in3D">
+    <meta name="description" content="Example of WebGL, Unity, Avaturn">
     <link rel="stylesheet" href="data/style.css">
 </head>
 
 <body>
     <div id="canvas-wrap">
-        <div id="vto-container">
-            <iframe id="vto-frame" class="vto-frame" allow="camera *; microphone *"></iframe>
-            <button id="vto-hide-button" onclick="hideVto()">Hide</button>
+        <div id="avaturn-container">
+            <iframe id="avaturn-iframe" class="vto-frame" allow="camera *; microphone *"></iframe>
         </div>
         <div id="unity-container">
             <canvas id="unity-canvas" ></canvas>
-        </div>
-    </div>
-    <div id="loader2">
-        <div class="loader-wrap">
-            <div class="block1"></div>
-            <div class="block2"></div>
-            <div class="text">
-                <div class="text__in3d"><img src="img/in3d.png" alt=""></div>
-                <div class="text__vendor"><img src="img/in3d.png" alt=""></div>
-            </div>
         </div>
     </div>
 </body>
@@ -63,12 +52,6 @@
     })
         .then((unityInstance) => {
             gameInstance = unityInstance;
-            document.querySelector(".block2").style.animation = "block2-a 0.8s linear forwards";
-            document.querySelector(".text__in3d").style.animation = "text__in3d-a2 0.4s linear forwards";
-            document.querySelector(".text__vendor").style.animation = "text__vendor-a2 0.4s linear forwards";
-            setTimeout(function() {
-                document.querySelector("#loader2").style.display = "none";
-            }, 2000);
         })
         .catch((message) => {
             alert(message);

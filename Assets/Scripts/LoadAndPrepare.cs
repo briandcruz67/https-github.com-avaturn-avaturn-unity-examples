@@ -114,14 +114,8 @@ public class LoadAndPrepare : MonoBehaviour
         {
             hips = root.GetChild(i);
             var boneName = hips.name;
-            switch (boneName)
-            {
-                case "mixamorig:Hips":
-                    return true;
-                case "mixamorigHips":
-                    return false;
-                case "Hips":
-                    return true;
+            if (boneName == "Hips") {
+                return true;
             }
         }
         hips = null;

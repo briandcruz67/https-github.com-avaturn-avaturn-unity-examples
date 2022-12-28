@@ -1,5 +1,5 @@
-function setupVtoFrame(subdomain) {
-    vtoFrame.src = "https://avaturn.me/iframe";
+function setupIframe(subdomain) {
+    vtoFrame.src = `https://${subdomain}.avaturn.dev/iframe`;
     window.addEventListener("message", subscribe);
     document.addEventListener("message", subscribe);
 
@@ -35,10 +35,10 @@ function setupVtoFrame(subdomain) {
     }
     
     function dataURItoBlob(dataURI) {
-        var mime = dataURI.split(',')[0].split(':')[1].split(';')[0];
-        var binary = atob(dataURI.split(',')[1]);
-        var array = [];
-        for (var i = 0; i < binary.length; i++) {
+        let mime = dataURI.split(',')[0].split(':')[1].split(';')[0];
+        let binary = atob(dataURI.split(',')[1]);
+        let array = [];
+        for (let i = 0; i < binary.length; i++) {
             array.push(binary.charCodeAt(i));
         }
         return new Blob([new Uint8Array(array)], {
@@ -47,12 +47,12 @@ function setupVtoFrame(subdomain) {
     }
 }
 
-function displayVto() {
+function displayIframe() {
     console.log("Display");
     vtoContainer.style.display = "block";
 }
 
-function hideVto() {
+function hideIframe() {
     console.log("Hide");
     vtoContainer.style.display = "none";
 }

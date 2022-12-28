@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d64652b9c39db40945f54b95890c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  subdomain: demo
 --- !u!4 &64338268
 Transform:
   m_ObjectHideFlags: 0
@@ -761,8 +762,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 64338267}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Show
+        m_TargetAssemblyTypeName: FrameController, Assembly-CSharp
+        m_MethodName: ChangeVisibility
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
