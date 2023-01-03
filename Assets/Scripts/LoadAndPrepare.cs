@@ -43,10 +43,11 @@ public class LoadAndPrepare : MonoBehaviour
             return;
         }
         Debug.Log("Start download...");
+        
         // Loading via GltFast loader
         var asset = GetComponent<GltfAsset>();
         asset.ClearScenes();
-        var success = url == "bytes" ? await asset.Load(AvatarReceiver.GlbBytes.ToArray()) : await asset.Load(url);
+        var success = await asset.Load(url);
         // Optional for animations
         if (success)
         {

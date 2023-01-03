@@ -24,7 +24,6 @@ public class AvatarReceiver : MonoBehaviour
 #endif
     }
 
-    public static readonly List<byte> GlbBytes = new List<byte>();
     private void GetFromWebView(UniWebView webview, UniWebViewMessage message)
     {
         var split = message.RawMessage.Split(new string[] {$"{parameterKey}="}, System.StringSplitOptions.None);
@@ -34,19 +33,8 @@ public class AvatarReceiver : MonoBehaviour
             return;
         }
         var url = split[1];
-        switch (url)
-        {
-            case "begin":
-                GlbBytes.Clear();
-                startReceiving.Invoke();
-                return;
-            case "end":
-                received?.Invoke("bytes");
-                return;
-        }
-
-        byte[] glb = Convert.FromBase64String(url);
-        GlbBytes.AddRange(glb);
+        url=  System.Uri.UnescapeDataString(url);
+        received?.Invoke(url);
     }
 
     public void GetAvatarLink(string url)

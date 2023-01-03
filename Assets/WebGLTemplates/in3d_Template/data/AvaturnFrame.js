@@ -19,9 +19,9 @@ function setupIframe(subdomain, send_method) {
             
             let data = json.data;
             let url;
-            if(data.urlType == 'dataUrl') {
+            if(data.urlType == 'dataURL') {
                 url = window.URL.createObjectURL(dataURItoBlob(data.url));
-            } else if (data.urlType == 'httpUrl'){
+            } else if (data.urlType == 'httpURL'){
                 url = data.url;
             } else { 
                 console.log("error, wrong url type " + data.urlType)

@@ -25,11 +25,11 @@ public class MobileWebViewController : MonoBehaviour
             }
             if (json.eventName === 'v2.avatar.exported') {
                 
-                if(json_data.urlType == 'dataURL') {
+                if(json.data.urlType == 'dataURL') {
                     alert('Can't use dataURL for mobile embed, please use httpURL, reach out to Avaturn team to setup.');
                 } 
 
-                let url = json_data.url;
+                let url = json.data.url;
                 
                 location.href = 'uniwebview://action?avatar_link=' + encodeURIComponent(url);
             }
