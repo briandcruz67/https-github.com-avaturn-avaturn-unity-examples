@@ -25,6 +25,15 @@ public class LoadAndPrepare : MonoBehaviour
     }
     
     [SerializeField] private RuntimeAnimatorController controller;
+    [SerializeField] private bool _prepareOnStart;
+
+    private GameObject _lastModel;
+
+    private void Start()
+    {
+        if (_prepareOnStart)
+            PrepareModel(transform);
+    }
 
     public async void Download(string url)
     {
@@ -65,12 +74,15 @@ public class LoadAndPrepare : MonoBehaviour
 
     private bool PrepareModel(Transform model)
     {
+        if(_lastModel != null)
+            Destroy(_lastModel);
         if (model.transform.childCount != 1)
         {
             Debug.LogWarning("Wrong number of children");
             return false;
         }
         var root = model.transform.GetChild(0);
+        _lastModel = root.gameObject;
         if (!root)
         {
             Debug.LogWarning("Can't find root object");
