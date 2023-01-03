@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b781fe673a5534e91b1e802df4b9362e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  url: https://in3d-staging-vfr.s3.us-west-2.amazonaws.com/model_T_regina.glb
+  url: 
   loadOnStartup: 0
   sceneId: -1
   streamingAsset: 0
@@ -61,7 +61,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38f11bfabf7f0643b875424372d41ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scan: {fileID: 11400000, guid: e615e6bff15d4e241b597b1649616434, type: 2}
   controller: {fileID: 9100000, guid: f3ea0e0f224b36146a7a05d6e429fc10, type: 2}
 --- !u!95 &8887175221107671475
 Animator:

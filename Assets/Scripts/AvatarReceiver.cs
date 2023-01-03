@@ -49,31 +49,7 @@ public class AvatarReceiver : MonoBehaviour
         GlbBytes.AddRange(glb);
     }
 
-    public void GetFromMainPageUrl()
-    {
-#if UNITY_WEBGL
-        var pageUrl = Application.absoluteURL;
-        string[] split = pageUrl.Split(new string[] {$"{parameterKey}="}, System.StringSplitOptions.None);
-        if (split.Length != 2)
-        {
-            Debug.Log("Can't find link in page url");
-            return;
-        }
-
-        var url = split[1];
-        if (!Uri.TryCreate(url, UriKind.Absolute, out var uriResult) ||
-            (uriResult.Scheme != Uri.UriSchemeHttp &&
-             uriResult.Scheme != Uri.UriSchemeHttps &&
-             uriResult.Scheme != Uri.UriSchemeFile))
-        {
-            Debug.Log("Failed link have wrong format");
-            return;
-        }
-        received?.Invoke(url);
-#endif
-    }
-
-    public void GetFromVtoFrame(string url)
+    public void GetAvatarLink(string url)
     {
         received?.Invoke(url);
     }

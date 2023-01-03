@@ -1,5 +1,6 @@
-function setupIframe(subdomain) {
-    vtoFrame.src = `https://${subdomain}.avaturn.dev/iframe`;
+function setupIframe(subdomain, send_method) {
+    document.getElementById("avaturn-iframe").src = `https://${subdomain}.avaturn.dev/iframe`;
+
     window.addEventListener("message", subscribe);
     document.addEventListener("message", subscribe);
 
@@ -14,18 +15,28 @@ function setupIframe(subdomain) {
         }
 
         // Get avatar GLB URL
-        if (json.eventName === 'v1.avatar.exported') {
-            let url = window.URL.createObjectURL(dataURItoBlob(json.data.blobURI));
+        if (json.eventName === 'v2.avatar.exported') {
+            
+            let data = json.data;
+            let url;
+            if(data.urlType == 'dataUrl') {
+                url = window.URL.createObjectURL(dataURItoBlob(data.url));
+            } else if (data.urlType == 'httpUrl'){
+                url = data.url;
+            } else { 
+                console.log("error, wrong url type " + data.urlType)
+            }
             console.log(`Avatar URL: ${url}`);
             gameInstance.SendMessage(
                 "AvatarReceiver",
-                "GetFromVtoFrame",
+                "GetAvatarLink",
                 url
             );
-            vtoContainer.style.display = "none";
+            
+            iframeContainer.style.display = "none";
         }
     }
-    
+
     function parse(event) {
         try {
             return JSON.parse(event.data);
@@ -33,7 +44,7 @@ function setupIframe(subdomain) {
             return null;
         }
     }
-    
+
     function dataURItoBlob(dataURI) {
         let mime = dataURI.split(',')[0].split(':')[1].split(';')[0];
         let binary = atob(dataURI.split(',')[1]);
@@ -49,10 +60,10 @@ function setupIframe(subdomain) {
 
 function displayIframe() {
     console.log("Display");
-    vtoContainer.style.display = "block";
+    iframeContainer.style.display = "block";
 }
 
 function hideIframe() {
     console.log("Hide");
-    vtoContainer.style.display = "none";
+    iframeContainer.style.display = "none";
 }
