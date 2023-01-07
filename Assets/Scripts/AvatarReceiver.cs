@@ -1,27 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Android;
 using UnityEngine.Events;
 
 public class AvatarReceiver : MonoBehaviour
 {
     [Serializable] class OnReceived : UnityEvent<string> {}
 
-    [SerializeField] private string parameterKey;
-#if UNITY_IOS || UNITY_ANDROID
-    [SerializeField] private UniWebView webView;
-#endif
+    [SerializeField] private string parameterKey; //TODO: private
     [SerializeField] private UnityEvent startReceiving;
     [SerializeField] private OnReceived received;
 
+    private UniWebView webView;
+
     // Start is called before the first frame update
-    void Start()
+    public void SetWebView(UniWebView webView)
     {
-#if UNITY_WEBGL
-        // Bridge.SetupVtoFrame();
-#elif UNITY_IOS || UNITY_ANDROID
+        this.webView = webView;
         webView.OnMessageReceived += GetFromWebView;
-#endif
     }
 
     private void GetFromWebView(UniWebView webview, UniWebViewMessage message)
