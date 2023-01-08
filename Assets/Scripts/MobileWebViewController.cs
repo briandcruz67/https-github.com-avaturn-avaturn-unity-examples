@@ -32,30 +32,27 @@ public class MobileWebViewController : MonoBehaviour
     private void WebViewOnOnPageFinished(UniWebView webview, int statuscode, string url)
     {
         //webView.OnPageFinished -= WebViewOnOnPageFinished;
-
-
+        
         string jsCode = @"
-        if (typeof isListnerAttached !== 'undefined') {
-            return;
+        var time;
+        if (typeof isListnerAttached === 'undefined') {
+            window.addEventListener('message', subscribe);
+            isListnerAttached = true;
+            //alert('finished');
         }
 
-        isListnerAttached = true;
-        var native_app  = window;
-        window.addEventListener('message', subscribe);
-        document.addEventListener('message', subscribe);
-        alert('finished');
-
         function subscribe(event) {
-            alert('sub started');
             const json = parse(event);
             if (json?.source !== 'avaturn' || json?.eventName == null) {
-                alert('sub failed');
                 return;
             }
             if (json.eventName === 'v2.avatar.exported') {
-                
+                if(time + 5000 > Date.now()){
+                    return;
+                }
+                time = Date.now();
                 let url = 'https://assets.hub.in3d.io/model_2022_12_22_T182855_939_9f0cea445f.glb';
-                alert('sub done');
+                //alert('sub done');
                 location.href = 'uniwebview://action?avatar_link=' + encodeURIComponent(url);
             }
 
