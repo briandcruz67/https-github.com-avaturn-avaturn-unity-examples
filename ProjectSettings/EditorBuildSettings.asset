@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/WebGL_Example.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
   - enabled: 0
-    path: Assets/Scenes/Mobile_Example_New.unity
-    guid: 54aa83befdf6dbf42ad4f1e7453b5a03
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}
