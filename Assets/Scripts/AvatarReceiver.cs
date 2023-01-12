@@ -30,7 +30,13 @@ public class AvatarReceiver : MonoBehaviour
             return;
         }
         var url = split[1];
-        url=  System.Uri.UnescapeDataString(url);
+        url =  System.Uri.UnescapeDataString(url);
+
+        if (url.StartsWith("error://")) {
+            Debug.Log($"Error when receiving data from Avaturn: {url.Substring(8)}");
+            return;
+        }
+
         received?.Invoke(url);
     }
 

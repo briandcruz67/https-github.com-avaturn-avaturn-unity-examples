@@ -11,7 +11,7 @@ public class MobileWebViewController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-#if UNITY_ANDROID
+#if UNITY_IOS || UNITY_ANDROID
         Permission.RequestUserPermission(Permission.Camera);
         Permission.RequestUserPermission(Permission.Microphone);
 #endif
@@ -19,8 +19,8 @@ public class MobileWebViewController : MonoBehaviour
         UniWebView.SetAllowAutoPlay(true);
         UniWebView.SetAllowInlinePlay(true);
         webView = webViewGameObject.AddComponent<UniWebView>();
-        string domain = string.Format("{0}.avaturn.dev", subdomain);
-        webView.Load("https://" + domain + "/iframe");
+        string domain = $"{subdomain}.avaturn.dev";
+        webView.Load($"https://{domain}/iframe");
         webView.ReferenceRectTransform = webViewFrame;
 
         _avatarReceiver.SetWebView(webView);
@@ -40,7 +40,6 @@ public class MobileWebViewController : MonoBehaviour
         if (typeof isListnerAttached === 'undefined') {
             window.addEventListener('message', subscribe);
             isListnerAttached = true;
-            //alert('finished');
         }
 
         function subscribe(event) {
@@ -49,9 +48,12 @@ public class MobileWebViewController : MonoBehaviour
                 return;
             }
             if (json.eventName === 'v2.avatar.exported') {
-                // let url = 'https://assets.hub.in3d.io/model_2022_12_22_T182855_939_9f0cea445f.glb';
-                //alert('sub done');
                 let url = json.data.url;
+
+                if (json.data.urlType !== 'httpURL') { 
+                    url = 'error://urlType is not httpURL';
+                }
+            
                 location.href = 'uniwebview://action?avatar_link=' + encodeURIComponent(url);
             }
 

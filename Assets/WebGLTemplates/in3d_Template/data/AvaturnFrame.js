@@ -24,7 +24,8 @@ function setupIframe(subdomain, send_method) {
             } else if (data.urlType == 'httpURL'){
                 url = data.url;
             } else { 
-                console.log("error, wrong url type " + data.urlType)
+                console.log("error, wrong url type " + data.urlType);
+                url = 'error';
             }
             console.log(`Avatar URL: ${url}`);
             gameInstance.SendMessage(
