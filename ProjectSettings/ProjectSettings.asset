@@ -154,6 +154,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.Avaturn.Avaturn_Unity_WebGL_Example
+    iPhone: com.Avaturn.AvaturnUnityWebGLExample
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -441,7 +442,7 @@ PlayerSettings:
   enableInternalProfiler: 0
   logObjCUncaughtExceptions: 1
   enableCrashReportAPI: 0
-  cameraUsageDescription: 
+  cameraUsageDescription: Allow camera usage
   locationUsageDescription: 
   microphoneUsageDescription: 
   bluetoothUsageDescription: 
