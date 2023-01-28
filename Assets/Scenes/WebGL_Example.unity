@@ -879,20 +879,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 392687008}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2038677982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2038677980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed3a6881417032446a83e58cd1472675, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  root: {fileID: 0}
-  _buidOnAwake: 1
 --- !u!114 &2038677983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -906,8 +892,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   events: {fileID: 11400000, guid: 48d3beb4af8adbe42ad7b8bf6ebfb4d6, type: 2}
-  _avatarBuilder: {fileID: 2038677982}
   _clearRootFromIndex: 0
+  _prepareOnStart: 0
 --- !u!95 &2038677984
 Animator:
   serializedVersion: 3
