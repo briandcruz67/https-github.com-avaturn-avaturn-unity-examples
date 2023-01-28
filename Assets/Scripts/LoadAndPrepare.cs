@@ -11,7 +11,6 @@ using UnityEngine.Scripting;
 /// This example of loading avatar model.
 /// </summary>
 [RequireComponent(typeof(GltfAsset))]
-[RequireComponent(typeof(Animator))]
 public class LoadAndPrepare : MonoBehaviour
 {
     [Serializable] public class BlobFiles
@@ -94,14 +93,14 @@ public class LoadAndPrepare : MonoBehaviour
             Debug.LogWarning("Wrong number of children in root object");
             return false;
         }
-        root = root.transform.GetChild(0);
-        if (!root)
+        var armatureRoot = root.transform.GetChild(0);
+        if (!armatureRoot)
         {
             Debug.LogWarning("Can't find group object");
             return false;
         }
 
-        var valid = HasValidBoneNames(root, out var hips);
+        var valid = HasValidBoneNames(armatureRoot, out var hips);
         if (valid == null)
         {
             Debug.LogWarning("Can't find Hips");
@@ -109,14 +108,13 @@ public class LoadAndPrepare : MonoBehaviour
         }
         if (valid == false) RenameBones(hips);
         
-        Destroy(root.GetComponent<Animation>());
-        var animator = root.gameObject.GetComponent<Animator>();
-        if (!animator) animator = root.gameObject.AddComponent<Animator>();
+        Destroy(armatureRoot.GetComponent<Animation>());
+        var animator = armatureRoot.gameObject.GetComponent<Animator>();
+        if (!animator) animator = armatureRoot.gameObject.AddComponent<Animator>();
         animator.runtimeAnimatorController = controller;
         animator.applyRootMotion = true;
 
-        if (!root.gameObject.GetComponent<HumanoidAvatarBuilder>())
-            root.gameObject.AddComponent<HumanoidAvatarBuilder>();
+        animator.avatar = HumanoidAvatarBuilder.Build(armatureRoot.gameObject);
 
         return true;
     }
