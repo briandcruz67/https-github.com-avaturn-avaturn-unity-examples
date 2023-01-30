@@ -1788,7 +1788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   events: {fileID: 11400000, guid: 48d3beb4af8adbe42ad7b8bf6ebfb4d6, type: 2}
   _clearRootFromIndex: 0
-  _prepareOnStart: 0
+  _prepareOnStart: 1
 --- !u!1 &2138677391
 GameObject:
   m_ObjectHideFlags: 0
