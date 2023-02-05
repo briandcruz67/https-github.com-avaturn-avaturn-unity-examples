@@ -42,4 +42,4 @@ Assets/StreamingAssets/crashlytics-build.properties
 
 .idea/
 New folder1
-web_gl_build
+web_gl_build*
