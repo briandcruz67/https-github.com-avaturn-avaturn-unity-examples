@@ -10,7 +10,7 @@ public class MenuWebGL : MonoBehaviour
     [SerializeField] private KeyCode _key;
     [SerializeField] private Text _menuHint;
     [SerializeField] private string _openMenu, _closeMenu;
-    [SerializeField] private GameObject _frameButton;
+    [SerializeField] private FrameController _frameController;
     [SerializeField] private bool _isOpen;
     
     void Update()
@@ -19,7 +19,7 @@ public class MenuWebGL : MonoBehaviour
         {
             _isOpen = !_isOpen;
             _menuHint.text = !_isOpen ? _openMenu : _closeMenu;
-            _frameButton.SetActive(_isOpen);
+            _frameController.ChangeVisibility();
             Cursor.visible = _isOpen;
             Cursor.lockState = _isOpen ? CursorLockMode.None : CursorLockMode.Locked;
         }
