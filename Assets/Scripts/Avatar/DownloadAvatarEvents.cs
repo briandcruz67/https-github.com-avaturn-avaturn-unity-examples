@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "in3DEvents/DownloadEvents")]
+[CreateAssetMenu(menuName = "AvaturnEvents/DownloadEvents")]
 public class DownloadAvatarEvents : ScriptableObject
 {
    public Action<Transform> OnSuccess;

@@ -10,7 +10,7 @@ public class MenuWebGL : MonoBehaviour
     [SerializeField] private KeyCode _key;
     [SerializeField] private Text _menuHint;
     [SerializeField] private string _openMenu, _closeMenu;
-    [SerializeField] private FrameController _frameController;
+    [SerializeField] private IframeControllerWebGL _frameController;
     [SerializeField] private bool _isOpen;
     
     void Update()

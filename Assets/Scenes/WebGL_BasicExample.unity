@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 64338268}
   - component: {fileID: 64338267}
   m_Layer: 0
-  m_Name: FrameContoller
+  m_Name: IframeContollerWebGL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _events: {fileID: 11400000, guid: 48d3beb4af8adbe42ad7b8bf6ebfb4d6, type: 2}
   _downloadOnStart: 0
-  _startUrl: https://assets.hub.in3d.io/model_2022_12_22_T182855_939_9f0cea445f.glb
+  _startUrl: 
 --- !u!114 &75478476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,7 +511,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7343060a3859074aaaa08ef13ef0428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parameterKey: avatar_link
   startReceiving:
     m_PersistentCalls:
       m_Calls: []
@@ -753,7 +752,7 @@ GameObject:
   - component: {fileID: 1801719116}
   - component: {fileID: 1801719115}
   m_Layer: 5
-  m_Name: ShowIFrame
+  m_Name: ShowIframe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

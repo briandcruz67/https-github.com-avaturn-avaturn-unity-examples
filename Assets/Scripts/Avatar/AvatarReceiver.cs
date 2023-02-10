@@ -8,7 +8,6 @@ public class AvatarReceiver : MonoBehaviour
 {
     [Serializable] class OnReceived : UnityEvent<string> {}
 
-    [SerializeField] private string parameterKey; //TODO: private
     [SerializeField] private UnityEvent startReceiving;
     [SerializeField] private OnReceived received;
 
@@ -22,7 +21,8 @@ public class AvatarReceiver : MonoBehaviour
     }
 
     private void GetFromWebView(UniWebView webview, UniWebViewMessage message)
-    {
+    {   
+        string parameterKey = "avatar_link";
         var split = message.RawMessage.Split(new string[] {$"{parameterKey}="}, System.StringSplitOptions.None);
         if (split.Length != 2)
         {

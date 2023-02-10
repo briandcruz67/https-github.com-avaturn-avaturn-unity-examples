@@ -12,17 +12,9 @@ using UnityEngine.Scripting;
 [RequireComponent(typeof(GltfAsset))]
 public class DownloadAvatar : MonoBehaviour
 {
-    [Serializable] public class BlobFiles
-    {
-        [Serializable] public class FileUrl
-        {
-            [Preserve] public string url;
-            [Preserve] public string fileName;
-        }
-        [Preserve] public FileUrl[] fileUrls;
-    }
-
     [SerializeField] private DownloadAvatarEvents _events;
+
+    [Tooltip("Use this for debug along with 'start url' to load avatar at runtime on start.")]
     [SerializeField] private bool _downloadOnStart;
     [SerializeField] private string _startUrl;
 

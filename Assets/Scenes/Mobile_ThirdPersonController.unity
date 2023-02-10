@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 64338268}
   - component: {fileID: 64338267}
   m_Layer: 0
-  m_Name: WebViewContoller
+  m_Name: IframeContollerMobile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -273,13 +273,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 64338266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 720b96f35fe914be2b14c10c53fa2ea8, type: 3}
+  m_Script: {fileID: 11500000, guid: 6255d54a64060b94aad5a7705802551a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   webViewGameObject: {fileID: 912060933}
   webViewFrame: {fileID: 1845229737}
   _avatarReceiver: {fileID: 1391169172}
-  subdomain: demo-httplink
+  subdomain: demo
 --- !u!4 &64338268
 Transform:
   m_ObjectHideFlags: 0
@@ -2037,7 +2037,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7343060a3859074aaaa08ef13ef0428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parameterKey: avatar_link
   startReceiving:
     m_PersistentCalls:
       m_Calls:

@@ -1,8 +1,13 @@
 ﻿using UnityEngine;
 using System.Runtime.InteropServices;
 
-public class FrameController : MonoBehaviour
+public class IframeControllerWebGL : MonoBehaviour
 {   
+    // This class is used to control Avaturn iframe for WebGL platform.
+    // IframeControllerMobile can also be used for these purposes
+    // but this class supports dataURLs which are generated much faster than httpURLs
+    // If you are building cross-platform application and use httpURLs, you may not need this class.
+
     [SerializeField] string subdomain;
 
     private static bool is_setup = false;
@@ -23,10 +28,8 @@ public class FrameController : MonoBehaviour
     public void ChangeVisibility() { 
         if (is_open) {
             Hide();
-            
         } else { 
             Show();
-            
         }
     }
 

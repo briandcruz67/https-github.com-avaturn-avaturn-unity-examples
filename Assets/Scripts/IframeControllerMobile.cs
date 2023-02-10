@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Android;
 
-public class MobileWebViewController : MonoBehaviour
+public class IframeControllerMobile : MonoBehaviour
 {
     private UniWebView webView;
     [SerializeField] private GameObject webViewGameObject;
@@ -41,6 +41,10 @@ public class MobileWebViewController : MonoBehaviour
         if (typeof isListnerAttached === 'undefined') {
             window.addEventListener('message', subscribe);
             isListnerAttached = true;
+
+            // Required overrides for mobile
+            window.avaturnForceExportHttpUrl = true;
+            window.avaturnFirebaseUseSignInWithRedirect = true;
         }
 
         function subscribe(event) {
