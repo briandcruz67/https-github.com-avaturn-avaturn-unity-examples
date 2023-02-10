@@ -30,7 +30,7 @@ function setupIframe(subdomain, send_method) {
             console.log(`Avatar URL: ${url}`);
             gameInstance.SendMessage(
                 "AvatarReceiver",
-                "GetAvatarLink",
+                "ReceiveAvatarLink",
                 url
             );
             

@@ -91,11 +91,6 @@ public static class HumanoidAvatarBuilder
 
 public class AvatarUtils
 {
-    //A static dictionary containing the mapping from joint/bones names in the model
-    //to the names Unity uses for them internally.
-    //In this case they match the naming from the included Mixamo model on the left
-    //and the Unity equivalent name on the right. 
-    //This does not need to be hard-coded. 
     public static Dictionary<string, string> HumanSkeletonNames = new Dictionary<string, string>()
     {
         {"Spine1", "Chest"},

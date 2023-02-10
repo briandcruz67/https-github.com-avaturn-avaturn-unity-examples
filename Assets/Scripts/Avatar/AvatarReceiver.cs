@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Android;
 using UnityEngine.Events;
 
 public class AvatarReceiver : MonoBehaviour
@@ -13,14 +11,16 @@ public class AvatarReceiver : MonoBehaviour
 
     private UniWebView webView;
 
-    // Start is called before the first frame update
     public void SetWebView(UniWebView webView)
     {
         this.webView = webView;
-        webView.OnMessageReceived += GetFromWebView;
+        webView.OnMessageReceived += ReceiveLinkAsUniwebViewMessage;
     }
-
-    private void GetFromWebView(UniWebView webview, UniWebViewMessage message)
+    
+    /// <summary>
+    /// This method is invoked for Mobile Iframe controller. Only works for httpURL
+    /// </summary>
+    private void ReceiveLinkAsUniwebViewMessage(UniWebView webview, UniWebViewMessage message)
     {   
         string parameterKey = "avatar_link";
         var split = message.RawMessage.Split(new string[] {$"{parameterKey}="}, System.StringSplitOptions.None);
@@ -40,8 +40,11 @@ public class AvatarReceiver : MonoBehaviour
         received?.Invoke(url);
     }
 
-    public void GetAvatarLink(string url)
-    {
+    /// <summary>
+    /// This method is invoked for WebGL controller. URL can be either dataURL or httpURL
+    /// </summary>
+    public void ReceiveAvatarLink(string url)
+    {   
         received?.Invoke(url);
     }
 }
