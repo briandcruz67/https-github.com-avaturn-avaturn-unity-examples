@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Runtime.InteropServices;
+using System;
 
 public class IframeControllerWebGL : MonoBehaviour
 {   
@@ -9,6 +10,7 @@ public class IframeControllerWebGL : MonoBehaviour
     // If you are building cross-platform application and use httpURLs, you may not need this class.
 
     [SerializeField] string subdomain;
+    [SerializeField] string linkFromAPI = "";
 
     private static bool is_setup = false;
     private static bool is_open = false;
@@ -34,10 +36,10 @@ public class IframeControllerWebGL : MonoBehaviour
     }
 
     public void Show()
-    {
-        // Bridge.OpenIframe(subdomain);
+    {               
+
 #if !UNITY_EDITOR && UNITY_WEBGL
-        SetupIframe(subdomain);
+        SetupIframe();
         ShowAvaturnIframeJS();
         is_open = true;
 #else
@@ -55,14 +57,15 @@ public class IframeControllerWebGL : MonoBehaviour
 #endif
     }
 
-    public static void SetupIframe(string subdomain)
+    public void SetupIframe()
     {   
         if(is_setup){
             return;
         }
-       
+        
+        string link =  linkFromAPI == "" ? $"https://{subdomain}.avaturn.dev/iframe" : linkFromAPI; 
 #if !UNITY_EDITOR && UNITY_WEBGL
-        SetupAvaturnIframeJS(subdomain);
+        SetupAvaturnIframeJS(link);
 #endif
         is_setup = true;
     }

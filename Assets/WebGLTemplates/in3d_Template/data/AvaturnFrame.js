@@ -1,5 +1,5 @@
-function setupIframe(subdomain, send_method) {
-    document.getElementById("avaturn-iframe").src = `https://${subdomain}.avaturn.dev/iframe`;
+function setupIframe(link) {
+    document.getElementById("avaturn-iframe").src = link;
 
     window.addEventListener("message", subscribe);
     document.addEventListener("message", subscribe);

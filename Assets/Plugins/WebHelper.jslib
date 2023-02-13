@@ -8,7 +8,7 @@ mergeInto(LibraryManager.library, {
         hideIframe();
     },
         
-    SetupAvaturnIframeJS: function (subdomain){
-        setupIframe(UTF8ToString(subdomain));
+    SetupAvaturnIframeJS: function (link){
+        setupIframe(UTF8ToString(link));
     },
 });

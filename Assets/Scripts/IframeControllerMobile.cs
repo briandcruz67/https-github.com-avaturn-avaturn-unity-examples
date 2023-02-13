@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Android;
 
 public class IframeControllerMobile : MonoBehaviour
@@ -8,19 +9,28 @@ public class IframeControllerMobile : MonoBehaviour
     [SerializeField] private RectTransform webViewFrame;
     [SerializeField] private AvatarReceiver _avatarReceiver;
     [SerializeField] string subdomain;
-    // Start is called before the first frame update
+    [SerializeField] string linkFromAPI = "";
+    
     void Start()
     {
+        string domain, link;
+        if ( linkFromAPI == "") {
+            domain = $"{subdomain}.avaturn.dev";
+            link = $"https://{domain}/iframe";
+        }   else {
+            domain = (new Uri(linkFromAPI)).Host;
+            link = linkFromAPI;
+        }
+
 #if UNITY_IOS || UNITY_ANDROID
         Permission.RequestUserPermission(Permission.Camera);
         Permission.RequestUserPermission(Permission.Microphone);
-#endif
-#if UNITY_IOS || UNITY_ANDROID
+
         UniWebView.SetAllowAutoPlay(true);
         UniWebView.SetAllowInlinePlay(true);
         webView = webViewGameObject.AddComponent<UniWebView>();
-        string domain = $"{subdomain}.avaturn.dev";
-        webView.Load($"https://{domain}/iframe");
+
+        webView.Load(link);
         webView.ReferenceRectTransform = webViewFrame;
 
         _avatarReceiver.SetWebView(webView);
