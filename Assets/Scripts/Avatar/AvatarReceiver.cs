@@ -5,8 +5,7 @@ using UnityEngine.Events;
 public class AvatarReceiver : MonoBehaviour
 {
     [Serializable] class OnReceived : UnityEvent<string> {}
-
-    [SerializeField] private UnityEvent startReceiving;
+    
     [SerializeField] private OnReceived received;
 
     private UniWebView webView;

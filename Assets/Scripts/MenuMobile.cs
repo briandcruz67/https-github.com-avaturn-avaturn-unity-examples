@@ -1,32 +1,31 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
 
 public class MenuMobile : MonoBehaviour
 {
-    [SerializeField] private Button _menuButton;
-    [SerializeField] private Text _menuButtonText;
-    [SerializeField] private string _openMenu, _closeMenu;
-    [SerializeField] private GameObject _frameButton, _controlCanvas;
     [SerializeField] private bool _isOpen;
+    [SerializeField] private GameObject _hideButton, _controllCanvas;
+    [SerializeField] private IframeControllerMobile _iframe;
 
-
-    private void Start()
+    public void Open()
     {
-        _menuButton.onClick.AddListener(OnMenuClick);
+        DefinedSwitch(true);
     }
 
-    private void OnMenuClick()
+    public void Close()
     {
-        _isOpen = !_isOpen;
-        _menuButtonText.text = !_isOpen ? _openMenu : _closeMenu;
-        _frameButton.SetActive(_isOpen);
-        _controlCanvas.SetActive(!_isOpen);
-        Cursor.visible = _isOpen;
-        Cursor.lockState = _isOpen ? CursorLockMode.None : CursorLockMode.Locked;
+        DefinedSwitch(false);
+    }
+
+    public void Switch()
+    {
+        DefinedSwitch(!_isOpen);
+    }
+
+    private void DefinedSwitch(bool isOpen)
+    {
+        _isOpen = isOpen;
+        _hideButton.SetActive(_isOpen);
+        _controllCanvas.SetActive(!_isOpen);
+        _iframe.ShowView(_isOpen);
     }
 }
