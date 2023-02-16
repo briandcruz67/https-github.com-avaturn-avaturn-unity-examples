@@ -49,24 +49,11 @@ public class PrepareAvatar : MonoBehaviour
             Debug.LogWarning("Prepare failed. Can't find root object");
             return;
         }
-        if (root.childCount != 1)
-        {
-            Debug.LogWarning("Prepare failed. Wrong number of children in root object");
-            return;
-        }
-        var armatureRoot = root.transform.GetChild(0);
-        if (!armatureRoot)
-        {
-            Debug.LogWarning("Prepare failed. Can't find group object");
-            return;
-        }
 
-        var hips = root.Find("hips");
-        
-        var childCount = armatureRoot.childCount;
+        var childCount = root.childCount;
         for (int i = 0; i < childCount; i++)
         {
-            var child = armatureRoot.GetChild(0);
+            var child = root.GetChild(0);
             child.SetParent(transform);
         }
         

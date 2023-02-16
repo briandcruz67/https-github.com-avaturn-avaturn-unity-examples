@@ -36,7 +36,7 @@ public class DownloadAvatar : MonoBehaviour
         // Loading via GltFast loader
         var asset = GetComponent<GltfAsset>();
         asset.ClearScenes();
-        var success = await asset.Load(url);
+        var success = await asset.Load(url, new AvaturnDownloadProvider());
         // Optional for animations
         if (success)
         {
@@ -50,9 +50,7 @@ public class DownloadAvatar : MonoBehaviour
     
     public async  Task<IDownload> Request(Uri url) {
         var req = new AwaitableDownload(url);
-        while (req.MoveNext()) {
-            await Task.Yield();
-        }
+        await req.WaitAsync();
         return req;
     }
 }
