@@ -1,0 +1,11 @@
+{
+  "name": "com.avaturn.third_person",
+  "displayName": "AvaturnThirdPerson",
+  "version": "0.0.0",
+  "dependencies": {
+    "com.avaturn.base": "0.0.0",
+    "com.unity.inputsystem": "1.3.0"
+  },
+  "author": "Kirill Stepushkin",
+  "description": "Avaturn Third Person example. Created from unity thirdPerson template."
+}

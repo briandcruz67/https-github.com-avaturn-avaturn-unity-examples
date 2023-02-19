@@ -49,7 +49,7 @@ public class DownloadAvatar : MonoBehaviour
     }
     
     public async  Task<IDownload> Request(Uri url) {
-        var req = new AwaitableDownload(url);
+        var req = new AvaturnAwaitableDownload(url);
         await req.WaitAsync();
         return req;
     }

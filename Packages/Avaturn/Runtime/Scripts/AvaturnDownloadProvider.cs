@@ -35,7 +35,7 @@ namespace GLTFast.Loading
         /// <returns>Object representing the request</returns>
         public async Task<IDownload> Request(Uri url)
         {
-            var req = new AwaitableDownload(url);
+            var req = new AvaturnAwaitableDownload(url);
             await req.WaitAsync();
             return req;
         }
@@ -51,7 +51,7 @@ namespace GLTFast.Loading
         {
 #pragma warning restore CS1998
 #if UNITY_WEBREQUEST_TEXTURE
-            var req = new AwaitableTextureDownload(url,nonReadable);
+            var req = new AvaturnAwaitableTextureDownload(url,nonReadable);
             await req.WaitAsync();
             return req;
 #else
@@ -63,7 +63,7 @@ namespace GLTFast.Loading
     /// <summary>
     /// Default <see cref="IDownload"/> implementation that loads URIs via <see cref="UnityWebRequest"/>
     /// </summary>
-    public class AwaitableDownload : IDownload
+    public class AvaturnAwaitableDownload : IDownload
     {
         const string k_MimeTypeGltfBinary = "model/gltf-binary";
         private const string k_AvaturnTypeGltfBinary = "application/octet-stream";
@@ -82,13 +82,13 @@ namespace GLTFast.Loading
         /// <summary>
         /// Empty constructor
         /// </summary>
-        protected AwaitableDownload() { }
+        protected AvaturnAwaitableDownload() { }
 
         /// <summary>
         /// Creates a download of a URI
         /// </summary>
         /// <param name="url">URI to request</param>
-        public AwaitableDownload(Uri url)
+        public AvaturnAwaitableDownload(Uri url)
         {
             Init(url);
         }
@@ -171,7 +171,7 @@ namespace GLTFast.Loading
     /// Default <see cref="ITextureDownload"/> implementation that loads
     /// texture URIs via <seealso cref="UnityWebRequest"/>.
     /// </summary>
-    public class AwaitableTextureDownload : AwaitableDownload, ITextureDownload {
+    public class AvaturnAwaitableTextureDownload : AvaturnAwaitableDownload, ITextureDownload {
 
         /// <summary>
         /// Parameter-less constructor, required for inheritance.

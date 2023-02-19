@@ -12,6 +12,23 @@
       },
       "url": "https://package.openupm.com"
     },
+    "com.avaturn.base": {
+      "version": "file:Avaturn",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.atteneder.gltfast": "5.0.0"
+      }
+    },
+    "com.avaturn.third_person": {
+      "version": "file:AvaturnThirdPerson",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.avaturn.base": "0.0.0",
+        "com.unity.inputsystem": "1.3.0"
+      }
+    },
     "com.unity.burst": {
       "version": "1.6.6",
       "depth": 1,
