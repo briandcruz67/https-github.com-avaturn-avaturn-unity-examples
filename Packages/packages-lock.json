@@ -12,23 +12,23 @@
       },
       "url": "https://package.openupm.com"
     },
-    "com.avaturn.base": {
-      "version": "https://github.com/gulfick/AvaturnBase.git#v0.0.1",
+    "com.avaturn.core": {
+      "version": "https://github.com/avaturn/avaturn-unity-sdk-core.git",
       "depth": 0,
       "source": "git",
       "dependencies": {
         "com.atteneder.gltfast": "5.0.0"
       },
-      "hash": "359e83fc6a2fc1b84bf149d00f327a7550864280"
+      "hash": "947405af9fe95f7f52660b9f8e66b2846732de08"
     },
     "com.avaturn.installer": {
-      "version": "https://github.com/Gulfick/AvaturnInstaller.git#v0.0.1",
+      "version": "https://github.com/avaturn/avaturn-unity-sdk-installer.git",
       "depth": 0,
       "source": "git",
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "3.0.2"
       },
-      "hash": "15e2c92513cf6aa0e32c1854441c38c494bb3c9d"
+      "hash": "d43a8e54709a7fc7e0a8aabb95e08e55348ef519"
     },
     "com.unity.burst": {
       "version": "1.6.6",
