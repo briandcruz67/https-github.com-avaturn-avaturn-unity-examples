@@ -1,25 +1,25 @@
 {
   "dependencies": {
-    "com.atteneder.gltfast": {
-      "version": "5.0.0",
+    "com.avaturn.core": {
+      "version": "https://github.com/avaturn/avaturn-unity-sdk-core.git",
       "depth": 0,
-      "source": "registry",
+      "source": "git",
+      "dependencies": {
+        "com.avaturn.gltfast": "5.0.1"
+      },
+      "hash": "5ef474b70d868bd2716049d5ca938749e3517ebd"
+    },
+    "com.avaturn.gltfast": {
+      "version": "https://github.com/avaturn/glTFast.git",
+      "depth": 0,
+      "source": "git",
       "dependencies": {
         "com.unity.modules.jsonserialize": "1.0.0",
         "com.unity.modules.unitywebrequest": "1.0.0",
         "com.unity.mathematics": "1.2.6",
         "com.unity.burst": "1.6.6"
       },
-      "url": "https://package.openupm.com"
-    },
-    "com.avaturn.core": {
-      "version": "https://github.com/avaturn/avaturn-unity-sdk-core.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.atteneder.gltfast": "5.0.0"
-      },
-      "hash": "d14919f7f7d71b7efb3c108873cc15d01c60c56d"
+      "hash": "2d8fdf1ac50e78a92f5d92f91f4b94136fcc5032"
     },
     "com.avaturn.installer": {
       "version": "https://github.com/avaturn/avaturn-unity-sdk-installer.git",
@@ -28,7 +28,7 @@
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "3.0.2"
       },
-      "hash": "99c61d83cbbf2d56f5809b654fd16c8be29e1977"
+      "hash": "2ac4fecd8168e4f935e336bd61dc68e04e9a3507"
     },
     "com.unity.burst": {
       "version": "1.6.6",

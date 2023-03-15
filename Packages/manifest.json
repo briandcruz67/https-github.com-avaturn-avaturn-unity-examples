@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.atteneder.gltfast": "5.0.0",
+    "com.avaturn.gltfast": "https://github.com/avaturn/glTFast.git",
     "com.avaturn.core": "https://github.com/avaturn/avaturn-unity-sdk-core.git",
     "com.avaturn.installer": "https://github.com/avaturn/avaturn-unity-sdk-installer.git", 
     "com.unity.cinemachine": "2.6.17",
