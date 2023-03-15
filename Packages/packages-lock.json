@@ -1,5 +1,17 @@
 {
   "dependencies": {
+    "com.atteneder.gltfast": {
+      "version": "https://github.com/avaturn/glTFast.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.modules.unitywebrequest": "1.0.0",
+        "com.unity.mathematics": "1.2.6",
+        "com.unity.burst": "1.6.6"
+      },
+      "hash": "759d0988e0f90d0f3ea1ff7dcb3ce1762c427354"
+    },
     "com.avaturn.core": {
       "version": "https://github.com/avaturn/avaturn-unity-sdk-core.git",
       "depth": 0,
