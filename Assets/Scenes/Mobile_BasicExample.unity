@@ -1657,9 +1657,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea58f48f12a9774c8e213380fc93867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 1949894717}
   events: {fileID: 11400000, guid: 48d3beb4af8adbe42ad7b8bf6ebfb4d6, type: 2}
   _clearRootFromIndex: 0
-  _prepareOnStart: 1
+  _prepareOnStart: 0
 --- !u!95 &1949894717
 Animator:
   serializedVersion: 3
@@ -1669,7 +1670,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949894715}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: eff216b79def87742b42e9996255b0f0, type: 2}
   m_Controller: {fileID: 9100000, guid: f3ea0e0f224b36146a7a05d6e429fc10, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0

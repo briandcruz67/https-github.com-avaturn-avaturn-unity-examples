@@ -10,23 +10,23 @@
         "com.unity.mathematics": "1.2.6",
         "com.unity.burst": "1.6.6"
       },
-      "hash": "759d0988e0f90d0f3ea1ff7dcb3ce1762c427354"
+      "hash": "3ebe1212dd8fdd3d9b990217be8d1130c624d778"
     },
     "com.avaturn.core": {
-      "version": "https://github.com/avaturn/avaturn-unity-sdk-core.git#v0.1.3",
+      "version": "https://github.com/avaturn/avaturn-unity-sdk-core.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "32ac188bc17140769095e7f99f51c8a6ecb6c754"
+      "hash": "f9d7b467491daab80b6e7af26492fca36e9f5dd7"
     },
     "com.avaturn.installer": {
-      "version": "https://github.com/avaturn/avaturn-unity-sdk-installer.git#v0.1.3",
+      "version": "https://github.com/avaturn/avaturn-unity-sdk-installer.git",
       "depth": 0,
       "source": "git",
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "3.0.2"
       },
-      "hash": "7eec0f75d132668218de91fb519e6a50bc34d056"
+      "hash": "0c8a9b8667d0dbd465783b4d3c3954db602988a2"
     },
     "com.unity.burst": {
       "version": "1.6.6",
@@ -182,7 +182,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "2ee62e21eded65257454d14d545f5db7484743b0"
+      "hash": "219287772d0999014a95201950412a67b916aaa8"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
