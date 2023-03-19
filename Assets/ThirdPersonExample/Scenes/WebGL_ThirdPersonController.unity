@@ -678,6 +678,24 @@ Transform:
   m_Father: {fileID: 2114283753834967213}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1043739174 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6411350832266140289, guid: af94c7bc2cc95cf478bf43b884a59fc9,
+    type: 3}
+  m_PrefabInstance: {fileID: 4608349847582540954}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &1043739175
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043739174}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!4 &1058009724 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1441373905428966692, guid: 64dce48905ffd9b4293e595fa6941544,
@@ -1159,6 +1177,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2144109887972675565, guid: af94c7bc2cc95cf478bf43b884a59fc9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2847286931268436416, guid: af94c7bc2cc95cf478bf43b884a59fc9,
         type: 3}
       propertyPath: m_RootOrder
@@ -1218,6 +1241,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AvaturnWebGL
+      objectReference: {fileID: 0}
+    - target: {fileID: 4608349848159681342, guid: af94c7bc2cc95cf478bf43b884a59fc9,
+        type: 3}
+      propertyPath: _isLockCursor
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4608349848264378832, guid: af94c7bc2cc95cf478bf43b884a59fc9,
         type: 3}
