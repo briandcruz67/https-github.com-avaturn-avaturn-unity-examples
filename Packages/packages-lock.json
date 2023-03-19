@@ -17,7 +17,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "f9d7b467491daab80b6e7af26492fca36e9f5dd7"
+      "hash": "ca5ed38e1be26862abc8536aa115045eb2be1416"
     },
     "com.avaturn.installer": {
       "version": "https://github.com/avaturn/avaturn-unity-sdk-installer.git",
@@ -26,7 +26,7 @@
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "3.0.2"
       },
-      "hash": "0c8a9b8667d0dbd465783b4d3c3954db602988a2"
+      "hash": "d7c654a6d1dfb9ee027654aabcbe9b955f0f50f9"
     },
     "com.unity.burst": {
       "version": "1.6.6",
@@ -175,7 +175,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "8072530c2cc666007d79f0a8aae038a4d2d26878"
+      "hash": "d57a707678b9deaeb1cf12f4cb66178554a35fa2"
     },
     "com.yasirkula.ingamedebugconsole": {
       "version": "https://github.com/yasirkula/UnityIngameDebugConsole.git",
