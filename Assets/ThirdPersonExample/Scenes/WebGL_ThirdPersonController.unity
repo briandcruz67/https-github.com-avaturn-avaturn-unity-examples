@@ -190,24 +190,6 @@ ReflectionProbe:
   m_UseOcclusionCulling: 1
   m_Importance: 1
   m_CustomBakedTexture: {fileID: 0}
---- !u!1 &648699765 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6411350832266140289, guid: af94c7bc2cc95cf478bf43b884a59fc9,
-    type: 3}
-  m_PrefabInstance: {fileID: 4608349847582540954}
-  m_PrefabAsset: {fileID: 0}
---- !u!225 &648699766
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 648699765}
-  m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1001 &702006872
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1177,11 +1159,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2144109887972675565, guid: af94c7bc2cc95cf478bf43b884a59fc9,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2847286931268436416, guid: af94c7bc2cc95cf478bf43b884a59fc9,
         type: 3}
       propertyPath: m_RootOrder
@@ -1246,41 +1223,6 @@ PrefabInstance:
         type: 3}
       propertyPath: _isLockCursor
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4608349848264378832, guid: af94c7bc2cc95cf478bf43b884a59fc9,
-        type: 3}
-      propertyPath: m_Pivot.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4608349848264378832, guid: af94c7bc2cc95cf478bf43b884a59fc9,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4608349848264378832, guid: af94c7bc2cc95cf478bf43b884a59fc9,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4608349848264378832, guid: af94c7bc2cc95cf478bf43b884a59fc9,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4608349848264378832, guid: af94c7bc2cc95cf478bf43b884a59fc9,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4608349848264378832, guid: af94c7bc2cc95cf478bf43b884a59fc9,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4608349848264378835, guid: af94c7bc2cc95cf478bf43b884a59fc9,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af94c7bc2cc95cf478bf43b884a59fc9, type: 3}
